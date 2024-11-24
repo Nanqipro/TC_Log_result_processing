@@ -1,0 +1,16 @@
+cluster2-s20-e2	0.000955
+cluster2-s20-e4	0.002822
+cluster2-s20-e8	0.010357
+cluster2-s20-e16	0.037005
+cluster2-s20-e32	0.127824
+cluster2-s20-e64	 0.435786
+cluster2-s20-e128  1.295092
+cluster2-s20-e256   4.016078
+cluster4-s17-e32	 0.006971
+cluster4-s18-e32	 0.017982
+cluster4-s19-e32		0.048187
+cluster4-s20-e32	 0.127754
+cluster4-s21-e32	 0.342503
+cluster4-s22-e32	0.820663
+cluster4-s23-e32		2.081672
+cluster4-s24-e32		5.364969
