@@ -11,7 +11,7 @@ print(df.head())
 
 # 假设 Excel 中列名分别是 'edge-count' 和 'speed-up'，如果不同请根据实际修改
 x = df['edge-count']
-y = df['speed-up']
+y = df['speed-up_build']
 
 # 对数据进行对数变换，以e为底的对数
 x_log = np.log1p(x)
