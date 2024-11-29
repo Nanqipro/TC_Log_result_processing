@@ -236,7 +236,7 @@ for i, patch in enumerate(box['boxes']):
 
 # 设置X轴标签和其它图形样式
 plt.xticks(range(1, len(algorithms) + 1), algorithms, rotation=20, fontsize=25)
-plt.ylabel('GLD Transactions per Request', fontsize=25, fontweight='bold')
+plt.ylabel('gld_transactions_per_request', fontsize=25, fontweight='bold')
 
 # 调整纵坐标刻度的字体大小
 plt.tick_params(axis='y', labelsize=25)  # 设置纵坐标刻度标签的字体大小为25

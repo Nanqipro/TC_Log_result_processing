@@ -100,7 +100,7 @@ if avg_degree is not None:
 ax1.set_ylabel('global_load_requests', fontsize=25, fontweight='bold')
 ax1.set_yscale('log')  # 设置 y 轴为对数坐标
 # 设置 x 轴范围，左边界为负值，以缩短第一个刻度与原点的距离
-ax1.set_xlim([-1, len(datasets) * (10 * bar_width + spacing)])
+ax1.set_xlim([-0.6, len(datasets) * (10 * bar_width + spacing) -0.57])
 # 设置 y 轴的刻度标签大小
 ax1.tick_params(axis='y', labelsize=20)
 
