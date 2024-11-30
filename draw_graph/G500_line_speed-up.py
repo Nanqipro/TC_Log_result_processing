@@ -16,9 +16,9 @@ group_tc_hash_speedup = df_speedup['GroupTC-HASH-speed-up']
 fig, ax = plt.subplots(figsize=(15, 8))
 
 # Plotting the speed-up ratios as line plots
-ax.plot(datasets, trust_speedup, marker='s', markersize=15, linestyle='-', color='#bce2ea', label='TRUST', linewidth=5)
-ax.plot(datasets, group_tc_speedup, marker='o', markersize=15, linestyle='-', color='#91d0fc', label='GroupTC-BS', linewidth=5)
-ax.plot(datasets, group_tc_hash_speedup, marker='^', markersize=15, linestyle='-', color='#daceae', label='GroupTC-HS', linewidth=5)
+ax.plot(datasets, trust_speedup, marker='s', markersize=15, linestyle='-', alpha=1, color='#77E4C8', label='TRUST', linewidth=5)
+ax.plot(datasets, group_tc_speedup, marker='o', markersize=15, linestyle='-', alpha=1, color='#577d97', label='GroupTC-BS', linewidth=5)
+ax.plot(datasets, group_tc_hash_speedup, marker='^', markersize=15, linestyle='-', alpha=1, color='#c2b79a', label='GroupTC-HS', linewidth=5)
 
 # Set axis labels and title with bold font
 # ax.set_xlabel('Datasets', fontsize=14, fontweight='bold')
@@ -33,6 +33,7 @@ ax.set_xticklabels(datasets, rotation=20, ha='center', fontsize=20)
 ax.legend(fontsize=20)
 # fig.legend(loc='upper center', bbox_to_anchor=(0.35, 0.97), ncol=4, fontsize=20)
 # Set y-axis tick label size and tick width
+ax.tick_params(axis='x', labelsize=22, width=4)
 ax.tick_params(axis='y', labelsize=20, width=4)
 
 # Set y-axis label to bold
