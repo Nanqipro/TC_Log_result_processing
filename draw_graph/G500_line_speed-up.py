@@ -22,7 +22,7 @@ ax.plot(datasets, group_tc_hash_speedup, marker='^', markersize=15, linestyle='-
 
 # Set axis labels and title with bold font
 # ax.set_xlabel('Datasets', fontsize=14, fontweight='bold')
-ax.set_ylabel('Speed-up', fontsize=25, fontweight='bold')
+ax.set_ylabel('Speedup', fontsize=25, fontweight='bold')
 # ax.set_title('Speed-up Ratios of Different Algorithms Relative to Polak Baseline', fontsize=16)
 
 # Set x-ticks
@@ -47,4 +47,8 @@ ax.spines['left'].set_linewidth(2)
 
 # Show the plot
 plt.tight_layout()
+
+# 保存图形为 PDF 文件
+plt.savefig(r'D:\BaiduNetdiskDownload\G500_speed-up_change_S.pdf', format='pdf')
+
 plt.show()

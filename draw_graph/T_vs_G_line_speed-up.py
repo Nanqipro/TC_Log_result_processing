@@ -22,7 +22,7 @@ ax.plot(avg_degree, speed_up_search, marker='s', markersize=7, linestyle='-', co
 
 # Set axis labels and title with bold font
 ax.set_xlabel('avg_degree', fontsize=18, fontweight='bold')
-ax.set_ylabel('Speed-up', fontsize=18, fontweight='bold')
+ax.set_ylabel('Speedup', fontsize=18, fontweight='bold')
 
 # Set x-ticks evenly spaced
 num_ticks = len(avg_degree)
@@ -71,7 +71,7 @@ plt.show()
 #
 # # Set axis labels and title with bold font
 # ax.set_xlabel('avg_degree', fontsize=18, fontweight='bold')
-# ax.set_ylabel('Speed-up', fontsize=18, fontweight='bold')
+# ax.set_ylabel('Speedup', fontsize=18, fontweight='bold')
 #
 # # 设置 x 轴刻度
 # # 设置x轴的刻度范围和步长

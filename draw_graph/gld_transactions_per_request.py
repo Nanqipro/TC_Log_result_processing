@@ -243,4 +243,7 @@ plt.tick_params(axis='y', labelsize=25)  # 设置纵坐标刻度标签的字体�
 
 # 显示图形
 plt.tight_layout()
+
+plt.savefig(r'D:\BaiduNetdiskDownload\gld_transactions_per_request_v4.pdf', format='pdf')
+
 plt.show()

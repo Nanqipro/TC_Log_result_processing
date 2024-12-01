@@ -22,7 +22,7 @@
 #
 # # Set axis labels and title with bold font
 # ax.set_xlabel('datasets', fontsize=18, fontweight='bold')
-# ax.set_ylabel('Speed-up', fontsize=18, fontweight='bold')
+# ax.set_ylabel('Speedup', fontsize=18, fontweight='bold')
 #
 # # Set x-ticks evenly spaced
 # num_ticks = len(datasets)
@@ -145,9 +145,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-
+from matplotlib.ticker import FuncFormatter
 # 读取第一个Excel文件的数据
-file_path = './TrustVSGroupTC/G500_TRUSTvsGroupTC_lowdegree_2.xlsx'
+file_path = './TrustVSGroupTC/G500_TRUSTvsGroupTC_lowdegree_1.xlsx'
 df1 = pd.read_excel(file_path)
 
 # 提取数据列
@@ -172,18 +172,19 @@ fig, ax1 = plt.subplots(figsize=(15, 8))
 ax2 = ax1.twinx()
 
 # 绘制百分比的柱状图（左Y轴）
-ax2.bar(x - width/2, TRUST_build_percent, width, bottom=TRUST_search_percent, label='TRUST Build', color='#9cd5fc', edgecolor='black', linewidth=1)
-ax2.bar(x + width/2, GroupTC_HASH_build_percent, width, bottom=GroupTC_HASH_search_percent, label='GroupTC-HS Build', color='#fefeb2', edgecolor='black', linewidth=1)
-ax2.bar(x - width/2, TRUST_search_percent, width, label='TRUST Search', color='#bce2ea', edgecolor='black', linewidth=1)
-ax2.bar(x + width/2, GroupTC_HASH_search_percent, width, label='GroupTC-HS Search', color='#f2e5c1', edgecolor='black', linewidth=1)
+ax2.bar(x - width/2, TRUST_build_percent, width, bottom=TRUST_search_percent, label='TRUST Hash Table Construction', color='#9cd5fc', edgecolor='black', linewidth=1)
+ax2.bar(x + width/2, GroupTC_HASH_build_percent, width, bottom=GroupTC_HASH_search_percent, label='GroupTC-HS Hash Table Construction', color='#fefeb2', edgecolor='black', linewidth=1)
+ax2.bar(x - width/2, TRUST_search_percent, width, label='TRUST Hash Search', color='#bce2ea', edgecolor='black', linewidth=1)
+ax2.bar(x + width/2, GroupTC_HASH_search_percent, width, label='GroupTC-HS Hash Search', color='#f2e5c1', edgecolor='black', linewidth=1)
 
 # 设置右边Y轴的标签和范围
 ax2.set_ylabel('Percentage', fontsize=25, fontweight='bold')
 ax2.set_ylim(0, 1)  # 百分比范围从0到1
-
+# 使用FuncFormatter将Y轴格式化为百分比
+ax2.yaxis.set_major_formatter(FuncFormatter(lambda y, _: f'{y*100:.0f}%'))
 # 绘制折线图
-ax1.plot(datasets, speed_up_build, marker='o', markersize=12, linestyle='-', color='#344C64', label='Speed-up Build', linewidth=4)
-ax1.plot(datasets, speed_up_search, marker='^', markersize=12, linestyle='-', color='#57A6A1', label='Speed-up Search', linewidth=4)
+ax1.plot(datasets, speed_up_build, marker='o', markersize=12, linestyle='-', color='#344C64', label='Hash Table Construction', linewidth=4)
+ax1.plot(datasets, speed_up_search, marker='^', markersize=12, linestyle='-', color='#57A6A1', label='Hash Search', linewidth=4)
 
 # 设置X轴
 ax1.set_xlabel('', fontsize=25, fontweight='bold')
@@ -191,14 +192,14 @@ ax1.set_xticks(x)
 ax1.set_xticklabels(datasets, rotation=20, ha='center', fontsize=20)
 
 # 设置左右边Y轴的标签和范围
-ax1.set_ylabel('Speed-up', fontsize=25, fontweight='bold')
+ax1.set_ylabel('Speedup', fontsize=25, fontweight='bold')
 
 # 修改左右边Y轴刻度标签的字体大小
 ax1.tick_params(axis='y', labelsize=20)  # 设置左边Y轴的字体大小
 ax2.tick_params(axis='y', labelsize=20)  # 设置右边Y轴的字体大小
 
 # 设置图例
-fig.legend(loc='upper left', bbox_to_anchor=(0.63, 0.95), ncol=1, fontsize=20, frameon=True, facecolor=(1, 1, 1, 0.6), edgecolor='none')
+fig.legend(loc='upper left', bbox_to_anchor=(0.47, 0.95), ncol=1, fontsize=20, frameon=True, facecolor=(1, 1, 1, 0.6), edgecolor='none')
 
 # 调整图层顺序，确保折线图在上面
 ax1.set_zorder(5)
@@ -207,4 +208,8 @@ ax1.patch.set_visible(False)  # 去掉ax2的背景
 
 # 显示图形
 plt.tight_layout()
+
+# 保存图形为 PDF 文件
+plt.savefig(r'D:\BaiduNetdiskDownload\percentage_change_E.pdf', format='pdf')
+
 plt.show()

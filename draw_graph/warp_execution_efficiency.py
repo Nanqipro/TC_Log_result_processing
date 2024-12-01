@@ -196,4 +196,8 @@ plt.tick_params(axis='y', labelsize=25)  # 设置纵坐标刻度标签的字体�
 
 # 显示图形
 plt.tight_layout()
+
+# 保存图形为 PDF 文件
+plt.savefig(r'D:\BaiduNetdiskDownload\warp_execution_efficiency_v4.pdf', format='pdf')
+
 plt.show()

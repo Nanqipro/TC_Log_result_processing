@@ -82,17 +82,17 @@ plot_bar_with_missing(ax1, bar_positions - 2.5 * bar_width, Bisson, 'Bisson', '#
 plot_bar_with_missing(ax1, bar_positions - 1.5 * bar_width, TriCore, 'TriCore', '#fefea9', missing_color, bar_width, max_value)
 plot_bar_with_missing(ax1, bar_positions - 0.5 * bar_width, Fox, 'Fox', '#9fbaef', missing_color, bar_width, max_value)
 plot_bar_with_missing(ax1, bar_positions + 0.5 * bar_width, Hu, 'Hu', '#f9bbf8', missing_color, bar_width, max_value)
-plot_bar_with_missing(ax1, bar_positions + 1.5 * bar_width, H_INDEX, 'H_INDEX', '#b2b893', missing_color, bar_width, max_value)
+plot_bar_with_missing(ax1, bar_positions + 1.5 * bar_width, H_INDEX, 'H-INDEX', '#b2b893', missing_color, bar_width, max_value)
 plot_bar_with_missing(ax1, bar_positions + 2.5 * bar_width, TRUST, 'TRUST', '#bce2ea', missing_color, bar_width, max_value)
-plot_bar_with_missing(ax1, bar_positions + 3.5 * bar_width, GroupTC_BS, 'GroupTC_BS', '#91d0fc', missing_color, bar_width, max_value)
-plot_bar_with_missing(ax1, bar_positions + 4.5 * bar_width, GroupTC_HS, 'GroupTC_HS', '#f2e5c1', missing_color, bar_width, max_value)
+plot_bar_with_missing(ax1, bar_positions + 3.5 * bar_width, GroupTC_BS, 'GroupTC-BS', '#91d0fc', missing_color, bar_width, max_value)
+plot_bar_with_missing(ax1, bar_positions + 4.5 * bar_width, GroupTC_HS, 'GroupTC-HS', '#f2e5c1', missing_color, bar_width, max_value)
 
 
 # 如果存在 avg_degree 列，则绘制折线图
 if avg_degree is not None:
     ax2 = ax1.twinx()  # 创建一个新的 y 轴
-    ax2.plot(bar_positions, avg_degree, 'k-', marker='s', label='Avg Degree', linewidth=2)
-    ax2.set_ylabel('Avg Degree', fontsize=25)
+    ax2.plot(bar_positions, avg_degree, 'k-', marker='s', label='Average Degree', linewidth=2)
+    ax2.set_ylabel('Average Degree', fontsize=25)
     ax2.set_ylim(0, 80)
 
 # 设置坐标轴标签和标题
@@ -115,10 +115,10 @@ ax1.bar(bar_positions[2], 0, bar_width, label='Bisson', color='#c1b3d5', edgecol
 ax1.bar(bar_positions[3], 0, bar_width, label='TriCore', color='#fefea9', edgecolor='black', linewidth=1)  # 假的柱子只为图例显示
 ax1.bar(bar_positions[4], 0, bar_width, label='Fox', color='#9fbaef', edgecolor='black', linewidth=1)  # 假的柱子只为图例显示
 ax1.bar(bar_positions[5], 0, bar_width, label='Hu', color='#f9bbf8', edgecolor='black', linewidth=1)  # 假的柱子只为图例显示
-ax1.bar(bar_positions[6], 0, bar_width, label='H_INDEX', color='#b2b893', edgecolor='black', linewidth=1)  # 假的柱子只为图例显示
+ax1.bar(bar_positions[6], 0, bar_width, label='H-INDEX', color='#b2b893', edgecolor='black', linewidth=1)  # 假的柱子只为图例显示
 ax1.bar(bar_positions[7], 0, bar_width, label='TRUST', color='#bce2ea', edgecolor='black', linewidth=1)  # 假的柱子只为图例显示
-ax1.bar(bar_positions[8], 0, bar_width, label='GroupTC_BS', color='#91d0fc', edgecolor='black', linewidth=1)  # 假的柱子只为图例显示
-ax1.bar(bar_positions[9], 0, bar_width, label='GroupTC_HS', color='#f2e5c1', edgecolor='black', linewidth=1)  # 假的柱子只为图例显示
+ax1.bar(bar_positions[8], 0, bar_width, label='GroupTC-BS', color='#91d0fc', edgecolor='black', linewidth=1)  # 假的柱子只为图例显示
+ax1.bar(bar_positions[9], 0, bar_width, label='GroupTC-HS', color='#f2e5c1', edgecolor='black', linewidth=1)  # 假的柱子只为图例显示
 # 添加图例
 # fig.legend(loc='upper left', bbox_to_anchor=(0.06, 0.97), fontsize=20)
 # 添加图例，设置并排排列在顶部
@@ -133,6 +133,10 @@ ax.spines['left'].set_linewidth(2)
 
 # 显示图形
 plt.tight_layout(pad=1.0, h_pad=2.0, w_pad=1.0)
+
+# 保存图形为 PDF 文件
+plt.savefig(r'D:\BaiduNetdiskDownload\global_load_requests_v4.pdf', format='pdf')
+
 plt.show()
 
 
