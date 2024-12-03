@@ -2,16 +2,16 @@
 import pandas as pd
 
 # Load the data from the provided text file
-file_path = r"C:\Users\nanqipro\Desktop\log_temp\GroupTC-HASH\time_output.txt"
+file_path = r"C:\Users\nanqipro\Desktop\log_temp12-02\GroupTC-OPT\time_output.txt"
 
 # Read the text file into a DataFrame using sep='\s+'
 data = pd.read_csv(file_path, sep='\s+', header=None)
 
 # Assign column names for better understanding
-data.columns = ['Column1', 'Column2', 'Column3', 'Column4', 'Column5', 'Column6', 'Column7', 'Column8', 'GroupTC-HS']
+data.columns = ['Column1', 'Column2', 'Column3', 'Column4', 'Column5', 'Column6', 'Column7', 'Column8', 'GroupTC-BS','vertex_count','edge_count']
 
 # Save the DataFrame to an Excel file
-excel_file_path = r"C:\Users\nanqipro\Desktop\GroupTC-HASH.xlsx"
+excel_file_path = r"C:\Users\nanqipro\Desktop\GroupTC-BS.xlsx"
 data.to_excel(excel_file_path, index=False)
 
 print(f"Excel file saved to {excel_file_path}")
