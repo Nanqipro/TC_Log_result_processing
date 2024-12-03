@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Load the data from the Excel file
-file_path = './G500_log/G500_log1.xlsx'
+file_path = './G500_log/G500_log2-speed-up.xlsx'
 df = pd.read_excel(file_path)
 
 # Extract data for plotting
-datasets = df['Datasets']
+datasets = df['datasets']
 Polak = df['Polak']
 GroupTC_BS = df['GroupTC-BS']
 TRUST = df['TRUST']
