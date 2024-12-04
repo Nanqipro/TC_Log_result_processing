@@ -156,6 +156,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from matplotlib.ticker import PercentFormatter
 
 # 从 Excel 文件中加载数据
 df = pd.read_excel('./all_log/profiler_result.xlsx', sheet_name='warp_execution_efficiency')
@@ -165,15 +166,20 @@ datasets = df['Datasets']
 algorithms = df.columns[1:]  # 假设第一列是 Dataset，其他是算法名称
 
 # 假设数据已经加载到df中
-# 数据清洗和提取有效数据
+# 数据清洗和提取有效数据，确保所有数据都是数值类型
 boxplot_data = []
 for algorithm in algorithms:
-    # 删除空值（NaN），只使用有效的数据
-    cleaned_data = df[algorithm].dropna().values
+    # 尝试将数据转换为数值类型，无法转换的值将被设置为 NaN
+    cleaned_data = pd.to_numeric(df[algorithm], errors='coerce').dropna().values
     boxplot_data.append(cleaned_data)
 
 # 自定义颜色，定义为一个列表，每个颜色对应一个算法
 colors = ['#f6c89a', '#a5d4a1', '#c1b3d5', '#fefea9', '#9fbaef', '#f9bbf8', '#b2b893', '#bce2ea', '#91d0fc', '#f2e5c1']
+
+# 检查颜色列表是否足够，如果不够，可以循环使用或扩展颜色列表
+if len(colors) < len(algorithms):
+    # 循环使用颜色
+    colors = (colors * (len(algorithms) // len(colors) + 1))[:len(algorithms)]
 
 # 创建箱线图
 plt.figure(figsize=(12, 10))
@@ -194,6 +200,17 @@ plt.ylabel('warp_execution_efficiency', fontsize=25, fontweight='bold')
 # 调整纵坐标刻度的字体大小
 plt.tick_params(axis='y', labelsize=25)  # 设置纵坐标刻度标签的字体大小为25
 
+# 如果数据范围在0到1之间，设置百分比格式
+plt.gca().yaxis.set_major_formatter(PercentFormatter(1.0))
+
+# 如果数据范围在0到100之间，设置百分比格式
+# plt.gca().yaxis.set_major_formatter(PercentFormatter(100))
+
+# 可选：设置y轴的范围（根据数据情况调整）
+# plt.ylim(0, 1)  # 如果数据范围在0到1之间
+# 或
+# plt.ylim(0, 100)  # 如果数据范围在0到100之间
+
 # 显示图形
 plt.tight_layout()
 
@@ -201,3 +218,5 @@ plt.tight_layout()
 plt.savefig(r'D:\BaiduNetdiskDownload\warp_execution_efficiency_v4.pdf', format='pdf')
 
 plt.show()
+
+

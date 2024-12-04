@@ -70,7 +70,8 @@ ax1.scatter(x_log, y_search, marker='o', color='#69a5a2', alpha=1, s=50, linewid
 
 # 创建原始的散点图
 ax1.scatter(x_log, y, marker='*', color='#666e9a', alpha=1, s=100, linewidths=5, label='All')
-
+# 添加基准线 y=1
+ax1.axhline(y=1, color='red', linestyle='-.', linewidth=2, label='Baseline')
 
 # 设置 X 轴为对数坐标
 ax1.set_xscale('log')

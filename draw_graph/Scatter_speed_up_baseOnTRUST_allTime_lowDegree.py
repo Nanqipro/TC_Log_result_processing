@@ -2,6 +2,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.lines import Line2D
 
 # 读取Excel文件
 file_path = './TrustVSGroupTC/lowDegree-buildIndex.xlsx'  # 修改为实际的文件路径
@@ -22,12 +23,25 @@ fig, ax1 = plt.subplots(figsize=(15, 8))
 
 # 创建散点图
 ax1.scatter(x_log, y, marker='*', color='#666e9a', alpha=1, s=160, linewidths=7)
-
+# 添加基准线 y=1
+ax1.axhline(y=1, color='red', linestyle='--', linewidth=2, label='')
 # 设置 X 轴为对数坐标
 ax1.set_xscale('log')
 
 # 设置 y 轴为对数坐标
 # ax1.set_yscale('log')
+
+
+# 定义基准线的图例
+baseline = Line2D([0], [0], color='red', linestyle='--', linewidth=2, label='Baseline')
+# 获取现有图例句柄和标签
+handles, labels = ax1.get_legend_handles_labels()
+# 添加基准线句柄
+handles.append(baseline)
+labels.append('Baseline')
+# 重新设置图例
+ax1.legend(handles=handles, labels=labels, fontsize=20)
+
 
 # 设置坐标轴标签
 ax1.set_xlabel('Edge Count', fontsize=22, fontweight='bold')
