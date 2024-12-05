@@ -27,7 +27,7 @@ baseline = df_speedup['baseline']
 x = np.arange(len(datasets))
 
 # 设置图形和坐标轴
-fig, ax = plt.subplots(figsize=(30, 10))
+fig, ax = plt.subplots(figsize=(15, 8))
 
 # 绘制线条，使用索引作为 x 值
 ax.plot(x, speedup1, marker='s', markersize=15, linestyle='-', alpha=1, color='#77E4C8', label='o1', linewidth=5)
@@ -43,10 +43,10 @@ ax.set_xticks(x)
 ax.set_xticklabels(datasets, rotation=20, ha='center', fontsize=20)
 
 # 添加图例
-ax.legend(fontsize=20)
+ax.legend(fontsize=20, loc='lower right', bbox_to_anchor=(0.98, 0.15), ncol=1)
 
 # 设置坐标轴刻度参数
-ax.tick_params(axis='x', labelsize=22, width=4)
+ax.tick_params(axis='x', labelsize=20, width=4)
 ax.tick_params(axis='y', labelsize=20, width=4)
 
 # 设置图形边框线宽

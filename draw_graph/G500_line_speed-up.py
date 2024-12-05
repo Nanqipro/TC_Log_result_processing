@@ -14,7 +14,7 @@ group_tc_hash_speedup = df_speedup['GroupTC-HASH-speed-up']
 baseline = df_speedup['baseline']
 
 # Set up the figure and axes for the speed-up plot
-fig, ax = plt.subplots(figsize=(15, 8))
+fig, ax = plt.subplots(figsize=(12, 10))
 
 # Plotting the speed-up ratios as line plots
 ax.plot(datasets, trust_speedup, marker='s', markersize=15, linestyle='-', alpha=1, color='#77E4C8', label='TRUST', linewidth=5)
@@ -51,6 +51,6 @@ ax.spines['left'].set_linewidth(2)
 plt.tight_layout()
 
 # 保存图形为 PDF 文件
-plt.savefig(r'D:\BaiduNetdiskDownload\G500_speed-up_change_S.pdf', format='pdf')
+plt.savefig(r'D:\BaiduNetdiskDownload\G500_speed-up_change_E.pdf', format='pdf')
 
 plt.show()

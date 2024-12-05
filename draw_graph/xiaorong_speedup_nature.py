@@ -15,7 +15,7 @@ baseline = df_speedup['baseline']
 
 
 # Set up the figure and axes for the speed-up plot
-fig, ax = plt.subplots(figsize=(30, 10))
+fig, ax = plt.subplots(figsize=(15, 8))
 
 # Plotting the speed-up ratios as line plots
 ax.plot(datasets, speedup1, marker='s', markersize=15, linestyle='-', alpha=1, color='#77E4C8', label='o1', linewidth=5)
@@ -29,13 +29,13 @@ ax.set_ylabel('Speedup', fontsize=25, fontweight='bold')
 
 # Set x-ticks
 ax.set_xticks(np.arange(len(datasets)))
-ax.set_xticklabels(datasets, rotation=20, ha='center', fontsize=20)
+ax.set_xticklabels(datasets, rotation=25, ha='center', fontsize=20)
 
 # Add legend with specified font size
 ax.legend(fontsize=20)
 # fig.legend(loc='upper center', bbox_to_anchor=(0.35, 0.97), ncol=4, fontsize=20)
 # Set y-axis tick label size and tick width
-ax.tick_params(axis='x', labelsize=22, width=4)
+ax.tick_params(axis='x', labelsize=16, width=3)
 ax.tick_params(axis='y', labelsize=20, width=4)
 
 # Set y-axis label to bold
