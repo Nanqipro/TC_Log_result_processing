@@ -35,23 +35,23 @@ ax1.bar(bar_positions + 1.5 * bar_width, groupTC_HS, bar_width, label='GroupTC-H
 # Add avg_degree as a secondary line plot if available
 if avg_degree is not None:
     ax2 = ax1.twinx()
-    ax2.plot(bar_positions, avg_degree, 'k-', marker='s', label='Average Degree', linewidth=2)
-    ax2.set_ylabel('Average Degree', fontsize=25, fontweight='bold')
+    ax2.plot(bar_positions, avg_degree, 'k-', marker='s', label='ave degree', linewidth=2)
+    ax2.set_ylabel('avg degree', fontsize=30, fontweight='bold')
     ax2.set_ylim(0, 100)
-    ax2.tick_params(axis='both', labelsize=20)  # 设置 y 轴和 x 轴刻度标签字体大小为 20
+    ax2.tick_params(axis='both', labelsize=30)  # 设置 y 轴和 x 轴刻度标签字体大小为 20
 
 # Set axis labels and title
-ax1.set_xlabel('', fontsize=25, fontweight='bold')
-ax1.set_ylabel('Time (ms)', fontsize=25, fontweight='bold')
+ax1.set_xlabel('', fontsize=30, fontweight='bold')
+ax1.set_ylabel('Time (ms)', fontsize=30, fontweight='bold')
 ax1.set_yscale('log')
 # ax1.set_title('Running times of different algorithms under various datasets', fontsize=16)
 
 # Set y-axis tick label size for the main axis
-ax1.tick_params(axis='y', labelsize=20)
+ax1.tick_params(axis='y', labelsize=25)
 
 # Set x-ticks
 ax1.set_xticks(bar_positions)
-ax1.set_xticklabels(datasets, fontsize=20, rotation=20, ha='center')
+ax1.set_xticklabels(datasets, fontsize=25, rotation=0, ha='center')
 
 # 添加图例
 # fig.legend(loc='upper left', bbox_to_anchor=(0.07, 0.95), fontsize=20)

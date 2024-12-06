@@ -21,19 +21,19 @@ ax.plot(avg_degree, speed_up_build, marker='o', markersize=7, linestyle='-', col
 ax.plot(avg_degree, speed_up_search, marker='s', markersize=7, linestyle='-', color='#A8D8EA', label='Speed-up Search', linewidth=3)
 
 # Set axis labels and title with bold font
-ax.set_xlabel('avg_degree', fontsize=18, fontweight='bold')
-ax.set_ylabel('Speedup', fontsize=18, fontweight='bold')
+ax.set_xlabel('avg degree', fontsize=30, fontweight='bold')
+ax.set_ylabel('Speedup', fontsize=30, fontweight='bold')
 
 # Set x-ticks evenly spaced
 num_ticks = len(avg_degree)
 ax.set_xticks(np.linspace(0, num_ticks - 1, num_ticks))  # 设置均匀分布的tick位置
-ax.set_xticklabels(avg_degree, rotation=35, ha='right', fontsize=14)
+ax.set_xticklabels(avg_degree, rotation=20, ha='right', fontsize=25)
 
 # Add legend with specified font size
-ax.legend(fontsize=18)
+ax.legend(fontsize=20)
 
 # Set y-axis tick label size
-ax.tick_params(axis='y', labelsize=18)
+ax.tick_params(axis='y', labelsize=25)
 
 # Set thicker border for the plot
 ax.spines['top'].set_linewidth(2)

@@ -59,19 +59,26 @@ y_build = df['speed-up_build']
 x_log = x
 
 # 创建图形和子图
-fig, ax1 = plt.subplots(figsize=(15, 8))
+fig, ax1 = plt.subplots(figsize=(30, 10))
 
 
 # 添加 speed-up_build 的散点图
 ax1.scatter(x_log, y_build, marker='^', color='#E29135', alpha=1, s=50, linewidths=5, label='Hash Table Construction')
-
 # 添加 speed-up_search 的散点图
 ax1.scatter(x_log, y_search, marker='o', color='#94C6CD', alpha=1, s=50, linewidths=5, label='Hash Search')
-
 # 创建原始的散点图
-ax1.scatter(x_log, y, marker='*', color='#4A5F7E', alpha=1, s=100, linewidths=5, label='All')
+ax1.scatter(x_log, y, marker='*', color='#4A5F7E', alpha=1, s=100, linewidths=5, label='Total')
+
+# # 添加 speed-up_build 的散点图
+# ax1.scatter(x_log, y_build, marker='^', color='#89AA7B', alpha=1, s=50, linewidths=5, label='Hash Table Construction')
+# # 添加 speed-up_search 的散点图
+# ax1.scatter(x_log, y_search, marker='o', color='#9D9EA3', alpha=1, s=50, linewidths=5, label='Hash Search')
+# # 创建原始的散点图
+# ax1.scatter(x_log, y, marker='*', color='#9BBBE1', alpha=1, s=100, linewidths=5, label='Total')
+
+
 # 添加基准线 y=1
-ax1.axhline(y=1, color='red', linestyle='-.', linewidth=5, label='Baseline')
+ax1.axhline(y=1, color='red', linestyle='-', linewidth=5, label='baseline')
 
 # 设置 X 轴为对数坐标
 ax1.set_xscale('log')
@@ -80,14 +87,14 @@ ax1.set_xscale('log')
 # ax1.set_yscale('log')
 
 # 设置坐标轴标签
-ax1.set_xlabel('Edge Count', fontsize=22, fontweight='bold')
-ax1.set_ylabel('Speedup', fontsize=22, fontweight='bold')
+ax1.set_xlabel('Edge Count', fontsize=30, fontweight='bold')
+ax1.set_ylabel('Speedup', fontsize=30, fontweight='bold')
 
 # 设置 x 轴的刻度标签大小
-ax1.tick_params(axis='x', labelsize=20)
+ax1.tick_params(axis='x', labelsize=25)
 
 # 设置 y 轴的刻度标签大小
-ax1.tick_params(axis='y', labelsize=20)
+ax1.tick_params(axis='y', labelsize=25)
 
 # 设置边框线宽
 ax = plt.gca()
@@ -100,7 +107,9 @@ ax.spines['left'].set_linewidth(2)
 ax1.grid(False)
 
 # 添加图例
-ax1.legend(fontsize=20)
+# ax1.legend(fontsize=20)
+fig.legend(loc='upper left', bbox_to_anchor=(0.82, 0.95), ncol=1, fontsize=20, frameon=True, facecolor=(1, 1, 1, 0.6))
+
 
 # 显示图形
 plt.tight_layout(pad=1.0, h_pad=2.0, w_pad=1.0)
@@ -144,7 +153,7 @@ plt.show()
 # ax1.scatter(x_log, y_search, marker='o', color='#69a5a2', alpha=1, s=50, linewidths=5, label='Hash Search')
 #
 # # 创建原始的散点图
-# ax1.scatter(x_log, y, marker='*', color='#666e9a', alpha=1, s=100, linewidths=5, label='All')
+# ax1.scatter(x_log, y, marker='*', color='#666e9a', alpha=1, s=100, linewidths=5, label='Total')
 # # 添加基准线 y=1
 # ax1.axhline(y=1, color='red', linestyle='-.', linewidth=2, label='Baseline')
 #
@@ -245,7 +254,7 @@ plt.show()
 # ax1.scatter(x_log, y_search_sorted, marker='o', color='#69a5a2', alpha=1, s=50, linewidths=5, label='Hash Search')
 #
 # # 创建原始的散点图
-# ax1.scatter(x_log, y_sorted, marker='*', color='#666e9a', alpha=1, s=100, linewidths=5, label='All')
+# ax1.scatter(x_log, y_sorted, marker='*', color='#666e9a', alpha=1, s=100, linewidths=5, label='Total')
 #
 # # 添加基准线 y=1
 # ax1.axhline(y=1, color='red', linestyle='-.', linewidth=2, label='Baseline')

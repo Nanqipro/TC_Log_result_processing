@@ -15,7 +15,7 @@ GroupTC_HS = df['GroupTC-HS']
 avg_degree = df['avg_degree'] if 'avg_degree' in df.columns else None  # Optional avg_degree column
 
 # Set up the figure and axes
-fig, ax1 = plt.subplots(figsize=(15, 8))
+fig, ax1 = plt.subplots(figsize=(30, 10))
 
 # Set width of bar
 bar_width = 0.1
@@ -59,13 +59,13 @@ plot_bar_with_missing(ax1, bar_positions + 1.5 * bar_width, GroupTC_HS, 'GroupTC
 if avg_degree is not None:
     ax2 = ax1.twinx()
     ax2.plot(bar_positions, avg_degree, 'k-', marker='s', label='Average Degree', linewidth=2)
-    ax2.set_ylabel('Average Degree', fontsize=25, fontweight='bold')
+    ax2.set_ylabel('avg degree', fontsize=30, fontweight='bold')
     ax2.set_ylim(0, 80)
-    ax2.tick_params(axis='both', labelsize=20)  # 设置 y 轴和 x 轴刻度标签字体大小为 20
+    ax2.tick_params(axis='both', labelsize=25)  # 设置 y 轴和 x 轴刻度标签字体大小为 25
 
 # Set axis labels and title
-ax1.set_xlabel('', fontsize=28, fontweight='bold')
-ax1.set_ylabel('Time (ms)', fontsize=28, fontweight='bold')
+ax1.set_xlabel('', fontsize=30, fontweight='bold')
+ax1.set_ylabel('Time (ms)', fontsize=30, fontweight='bold')
 ax1.set_yscale('log')
 # ax1.set_title('Running times of different algorithms under various datasets', fontsize=16)
 
@@ -73,12 +73,12 @@ ax1.set_xlim([-0.25, len(datasets) * (4 * bar_width+spacing) -0.4])
 
 
 # Set y-axis tick label size for the main axis
-ax1.tick_params(axis='y', labelsize=24)
+ax1.tick_params(axis='y', labelsize=25)
 
 
 # Set x-ticks
 ax1.set_xticks(bar_positions)
-ax1.set_xticklabels(datasets, fontsize=24, rotation=20, ha='center')
+ax1.set_xticklabels(datasets, fontsize=25, rotation=20, ha='center')
 
 # 添加图例：手动添加一次图例项
 ax1.bar(bar_positions[0], 0, bar_width, label='Polak', color='#f6c89a', edgecolor='black', linewidth=1)  # 假的柱子只为图例显示

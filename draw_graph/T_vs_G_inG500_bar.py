@@ -166,7 +166,7 @@ x = np.arange(len(datasets))  # datasets 在横坐标上的位置
 width = 0.2  # 每个柱子的宽度
 
 # 创建图形和双Y轴
-fig, ax1 = plt.subplots(figsize=(15, 8))
+fig, ax1 = plt.subplots(figsize=(30, 10))
 
 # 创建右边的Y轴（speed-up的折线图）
 ax2 = ax1.twinx()
@@ -187,16 +187,16 @@ ax1.plot(datasets, speed_up_build, marker='o', markersize=12, linestyle='-', col
 ax1.plot(datasets, speed_up_search, marker='^', markersize=12, linestyle='-', color='#57A6A1', label='Hash Search', linewidth=4)
 
 # 设置X轴
-ax1.set_xlabel('', fontsize=25, fontweight='bold')
+ax1.set_xlabel('', fontsize=30, fontweight='bold')
 ax1.set_xticks(x)
-ax1.set_xticklabels(datasets, rotation=20, ha='center', fontsize=20)
+ax1.set_xticklabels(datasets, rotation=25, ha='center', fontsize=20)
 
 # 设置左右边Y轴的标签和范围
-ax1.set_ylabel('Speedup', fontsize=25, fontweight='bold')
+ax1.set_ylabel('Speedup', fontsize=30, fontweight='bold')
 
 # 修改左右边Y轴刻度标签的字体大小
-ax1.tick_params(axis='y', labelsize=20)  # 设置左边Y轴的字体大小
-ax2.tick_params(axis='y', labelsize=20)  # 设置右边Y轴的字体大小
+ax1.tick_params(axis='y', labelsize=25)  # 设置左边Y轴的字体大小
+ax2.tick_params(axis='y', labelsize=25)  # 设置右边Y轴的字体大小
 
 # 设置图例
 fig.legend(loc='upper left', bbox_to_anchor=(0.47, 0.95), ncol=1, fontsize=20, frameon=True, facecolor=(1, 1, 1, 0.6), edgecolor='none')

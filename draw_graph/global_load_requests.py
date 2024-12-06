@@ -92,21 +92,21 @@ plot_bar_with_missing(ax1, bar_positions + 4.5 * bar_width, GroupTC_HS, 'GroupTC
 if avg_degree is not None:
     ax2 = ax1.twinx()  # 创建一个新的 y 轴
     ax2.plot(bar_positions, avg_degree, 'k-', marker='s', label='Average Degree', linewidth=2)
-    ax2.set_ylabel('Average Degree', fontsize=25)
+    ax2.set_ylabel('avg degree', fontsize=30, fontweight='bold')
     ax2.set_ylim(0, 80)
 
 # 设置坐标轴标签和标题
 # ax1.set_xlabel('Datasets', fontsize=18, fontweight='bold')
-ax1.set_ylabel('global_load_requests', fontsize=25, fontweight='bold')
+ax1.set_ylabel('global_load_requests', fontsize=30, fontweight='bold')
 ax1.set_yscale('log')  # 设置 y 轴为对数坐标
 # 设置 x 轴范围，左边界为负值，以缩短第一个刻度与原点的距离
 ax1.set_xlim([-0.6, len(datasets) * (10 * bar_width + spacing) -0.57])
 # 设置 y 轴的刻度标签大小
-ax1.tick_params(axis='y', labelsize=20)
+ax1.tick_params(axis='y', labelsize=25)
 
 # 设置 x 轴刻度标签
 ax1.set_xticks(bar_positions)
-ax1.set_xticklabels(datasets, fontsize=20, rotation=20, ha='center')
+ax1.set_xticklabels(datasets, fontsize=25, rotation=0, ha='center')
 
 # 添加图例：手动添加一次图例项
 ax1.bar(bar_positions[0], 0, bar_width, label='Polak', color='#f6c89a', edgecolor='black', linewidth=1)  # 假的柱子只为图例显示
@@ -122,7 +122,7 @@ ax1.bar(bar_positions[9], 0, bar_width, label='GroupTC-HS', color='#f2e5c1', edg
 # 添加图例
 # fig.legend(loc='upper left', bbox_to_anchor=(0.06, 0.97), fontsize=20)
 # 添加图例，设置并排排列在顶部
-fig.legend(loc='upper center', bbox_to_anchor=(0.45, 0.95), ncol=10, fontsize=20)
+fig.legend(loc='upper center', bbox_to_anchor=(0.456, 0.95), ncol=10, fontsize=20)
 
 # 设置边框线宽
 ax = plt.gca()

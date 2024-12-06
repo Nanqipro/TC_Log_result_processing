@@ -27,27 +27,27 @@ baseline = df_speedup['baseline']
 x = np.arange(len(datasets))
 
 # 设置图形和坐标轴
-fig, ax = plt.subplots(figsize=(15, 8))
+fig, ax = plt.subplots(figsize=(30, 10))
 
 # 绘制线条，使用索引作为 x 值
 ax.plot(x, speedup1, marker='s', markersize=15, linestyle='-', alpha=1, color='#77E4C8', label='o1', linewidth=5)
 ax.plot(x, speedup2, marker='o', markersize=15, linestyle='-', alpha=1, color='#577d97', label='o1+o2', linewidth=5)
 ax.plot(x, speedup3, marker='^', markersize=15, linestyle='-', alpha=1, color='#c2b79a', label='o1+o2+o3', linewidth=5)
-ax.plot(x, baseline, marker='*', markersize=15, linestyle='-.', alpha=1, color='red', label='baseline', linewidth=5)
+ax.plot(x, baseline, marker='*', markersize=15, linestyle='-', alpha=1, color='red', label='baseline', linewidth=5)
 
 # 设置 y 轴标签
-ax.set_ylabel('Speedup', fontsize=25, fontweight='bold')
+ax.set_ylabel('Speedup', fontsize=30, fontweight='bold')
 
 # 设置 x 轴刻度和标签
 ax.set_xticks(x)
-ax.set_xticklabels(datasets, rotation=20, ha='center', fontsize=20)
+ax.set_xticklabels(datasets, rotation=20, ha='center', fontsize=25)
 
 # 添加图例
 ax.legend(fontsize=20, loc='lower right', bbox_to_anchor=(0.98, 0.15), ncol=1)
 
 # 设置坐标轴刻度参数
-ax.tick_params(axis='x', labelsize=20, width=4)
-ax.tick_params(axis='y', labelsize=20, width=4)
+ax.tick_params(axis='x', labelsize=25, width=4)
+ax.tick_params(axis='y', labelsize=25, width=4)
 
 # 设置图形边框线宽
 ax.spines['top'].set_linewidth(2)
