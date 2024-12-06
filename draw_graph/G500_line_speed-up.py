@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Load the data from the Excel file
-file_path = './G500_log/G500_log1-speed-up.xlsx'  # 请确保文件路径正确
+file_path = './G500_log/G500_log2-speed-up.xlsx'  # 请确保文件路径正确
 df_speedup = pd.read_excel(file_path)
 
 # Extract data for plotting
@@ -14,7 +14,7 @@ group_tc_hash_speedup = df_speedup['GroupTC-HASH-speed-up']
 baseline = df_speedup['baseline']
 
 # Set up the figure and axes for the speed-up plot
-fig, ax = plt.subplots(figsize=(12, 10))
+fig, ax = plt.subplots(figsize=(16, 10))
 
 # Plotting the speed-up ratios as line plots
 ax.plot(datasets, trust_speedup, marker='s', markersize=15, linestyle='-', alpha=1, color='#77E4C8', label='TRUST', linewidth=5)
@@ -51,6 +51,6 @@ ax.spines['left'].set_linewidth(2)
 plt.tight_layout()
 
 # 保存图形为 PDF 文件
-plt.savefig(r'D:\BaiduNetdiskDownload\G500_speed-up_change_E.pdf', format='pdf')
+plt.savefig(r'D:\BaiduNetdiskDownload\G500_speed-up_change_S.pdf', format='pdf')
 
 plt.show()

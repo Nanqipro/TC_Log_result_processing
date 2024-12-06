@@ -182,7 +182,7 @@ if len(colors) < len(algorithms):
     colors = (colors * (len(algorithms) // len(colors) + 1))[:len(algorithms)]
 
 # 创建箱线图
-plt.figure(figsize=(12, 10))
+plt.figure(figsize=(16, 10))
 box = plt.boxplot(boxplot_data, patch_artist=True,
                   boxprops=dict(color='black'),
                   whiskerprops=dict(color='black'),

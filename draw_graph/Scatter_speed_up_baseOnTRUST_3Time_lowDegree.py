@@ -63,11 +63,11 @@ fig, ax1 = plt.subplots(figsize=(30, 10))
 
 
 # 添加 speed-up_build 的散点图
-ax1.scatter(x_log, y_build, marker='^', color='#E29135', alpha=1, s=50, linewidths=5, label='Hash Table Construction')
+ax1.scatter(x_log, y_build, marker='^', color='#E29135', alpha=1, s=140, linewidths=9, label='Hash Table Construction')
 # 添加 speed-up_search 的散点图
-ax1.scatter(x_log, y_search, marker='o', color='#94C6CD', alpha=1, s=50, linewidths=5, label='Hash Search')
+ax1.scatter(x_log, y_search, marker='o', color='#94C6CD', alpha=1, s=140, linewidths=9, label='Hash Search')
 # 创建原始的散点图
-ax1.scatter(x_log, y, marker='*', color='#4A5F7E', alpha=1, s=100, linewidths=5, label='Total')
+ax1.scatter(x_log, y, marker='*', color='#4A5F7E', alpha=1, s=140, linewidths=9, label='Total')
 
 # # 添加 speed-up_build 的散点图
 # ax1.scatter(x_log, y_build, marker='^', color='#89AA7B', alpha=1, s=50, linewidths=5, label='Hash Table Construction')
@@ -78,7 +78,7 @@ ax1.scatter(x_log, y, marker='*', color='#4A5F7E', alpha=1, s=100, linewidths=5,
 
 
 # 添加基准线 y=1
-ax1.axhline(y=1, color='red', linestyle='-', linewidth=5, label='baseline')
+ax1.axhline(y=1, color='red', linestyle='-', linewidth=4, label='baseline')
 
 # 设置 X 轴为对数坐标
 ax1.set_xscale('log')

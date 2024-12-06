@@ -223,7 +223,7 @@ for algorithm in algorithms:
 colors = ['#f6c89a', '#a5d4a1', '#c1b3d5', '#fefea9', '#9fbaef', '#f9bbf8', '#b2b893', '#bce2ea', '#91d0fc', '#f2e5c1']
 
 # 创建箱线图
-plt.figure(figsize=(12, 10))
+plt.figure(figsize=(16, 10))
 box = plt.boxplot(boxplot_data, patch_artist=True,
                   boxprops=dict(color='black'),
                   whiskerprops=dict(color='black'),

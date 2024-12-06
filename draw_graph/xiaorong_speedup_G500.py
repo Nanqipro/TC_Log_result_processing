@@ -30,10 +30,10 @@ x = np.arange(len(datasets))
 fig, ax = plt.subplots(figsize=(30, 10))
 
 # 绘制线条，使用索引作为 x 值
-ax.plot(x, speedup1, marker='s', markersize=15, linestyle='-', alpha=1, color='#77E4C8', label='o1', linewidth=5)
-ax.plot(x, speedup2, marker='o', markersize=15, linestyle='-', alpha=1, color='#577d97', label='o1+o2', linewidth=5)
-ax.plot(x, speedup3, marker='^', markersize=15, linestyle='-', alpha=1, color='#c2b79a', label='o1+o2+o3', linewidth=5)
-ax.plot(x, baseline, marker='*', markersize=15, linestyle='-', alpha=1, color='red', label='baseline', linewidth=5)
+ax.plot(x, speedup1, marker='s', markersize=20, linestyle='-', alpha=1, color='#77E4C8', label='VP', linewidth=8)
+ax.plot(x, speedup2, marker='o', markersize=20, linestyle='-', alpha=1, color='#577d97', label='VP+EF', linewidth=8)
+ax.plot(x, speedup3, marker='^', markersize=20, linestyle='-', alpha=1, color='#c2b79a', label='VP+EF+RL', linewidth=8)
+ax.plot(x, baseline, marker='*', markersize=20, linestyle='-', alpha=1, color='red', label='baseline', linewidth=8)
 
 # 设置 y 轴标签
 ax.set_ylabel('Speedup', fontsize=30, fontweight='bold')

@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Load the data from the Excel file
-file_path = './xiaorong_for_GroupTC-BS/GroupTC-BS-xiaorong-natureDatasets.xlsx'  # 请确保文件路径正确
+file_path = './xiaorong_for_GroupTC-BS/xiaorong_nature_graphs.xlsx'  # 请确保文件路径正确
 df_speedup = pd.read_excel(file_path)
 
 # Extract data for plotting
@@ -18,10 +18,10 @@ baseline = df_speedup['baseline']
 fig, ax = plt.subplots(figsize=(30, 10))
 
 # Plotting the speed-up ratios as line plots
-ax.plot(datasets, speedup1, marker='s', markersize=15, linestyle='-', alpha=1, color='#77E4C8', label='o1', linewidth=5)
-ax.plot(datasets, speedup2, marker='o', markersize=15, linestyle='-', alpha=1, color='#577d97', label='o1+o2', linewidth=5)
-ax.plot(datasets, speedup3, marker='^', markersize=15, linestyle='-', alpha=1, color='#c2b79a', label='o1+o2+o3', linewidth=5)
-ax.plot(datasets, baseline, marker='*', markersize=15, linestyle='-', alpha=1, color='red', label='baseline', linewidth=5)
+ax.plot(datasets, speedup1, marker='s', markersize=20, linestyle='-', alpha=1, color='#77E4C8', label='VP', linewidth=8)
+ax.plot(datasets, speedup2, marker='o', markersize=20, linestyle='-', alpha=1, color='#577d97', label='VP+EF', linewidth=8)
+ax.plot(datasets, speedup3, marker='^', markersize=20, linestyle='-', alpha=1, color='#c2b79a', label='VP+EF+RL', linewidth=8)
+ax.plot(datasets, baseline, marker='*', markersize=20, linestyle='-', alpha=1, color='red', label='baseline', linewidth=8)
 # Set axis labels and title with bold font
 # ax.set_xlabel('Datasets', fontsize=14, fontweight='bold')
 ax.set_ylabel('Speedup', fontsize=30, fontweight='bold')
