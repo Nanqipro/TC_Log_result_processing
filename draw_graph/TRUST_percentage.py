@@ -20,7 +20,7 @@ TRUST_high_percent = df1['percentage_high'].tolist()
 # 定义柱子的位置
 x = np.arange(len(datasets))  # datasets 在横坐标上的位置
 width = 0.5  # 每个柱子的宽度
-
+spacing = 0.25  # 设置每组数据集之间的间隔
 # 创建图形和双Y轴
 fig, ax2 = plt.subplots(figsize=(30, 10))
 
@@ -50,7 +50,7 @@ ax2.tick_params(axis='y', labelsize=25)  # 设置右边Y轴的字体大小
 fig.legend(loc='upper left', bbox_to_anchor=(0.82, 0.95), ncol=1, fontsize=25, frameon=True, facecolor=(1, 1, 1, 0.6), edgecolor='none')
 
 # 设置 x 轴范围，左边界为负值，以缩短第一个刻度与原点的距离
-# ax2.set_xlim([-0.45, len(datasets) * (width+0.1) ])
+ax2.set_xlim([-0.5, len(datasets) * (1 * width + spacing) +4.6])
 
 # 显示图形
 plt.tight_layout()
