@@ -48,20 +48,24 @@ for i, patch in enumerate(box['boxes']):
 # 设置X轴标签和其它图形样式
 
 # 设置X轴标签和其它图形样式
-plt.xticks(range(1, len(selected_algorithms) + 1), selected_algorithms, rotation=20, fontsize=30)
-plt.ylabel('gld_transactions_per_request', fontsize=30, fontweight='bold')
-plt.tick_params(axis='x', labelsize=25)  # 设置纵坐标刻度标签的字体大小为25
-plt.tick_params(axis='y', labelsize=25)  # 设置纵坐标刻度标签的字体大小为25
+plt.xticks(range(1, len(selected_algorithms) + 1), selected_algorithms, rotation=25, fontsize=40)
+# plt.ylabel('gld_transactions_per_request', fontsize=37, fontweight='bold')
+
+ax = plt.gca()
+ax.set_ylabel('gld_transactions_per_request', fontsize=40, fontweight='bold')
+ax.yaxis.set_label_coords(-0.1, 0.4)  # 调整坐标，根据需要进行修改
+
+
+plt.tick_params(axis='x', labelsize=40)  # 设置纵坐标刻度标签的字体大小为25
+plt.tick_params(axis='y', labelsize=40)  # 设置纵坐标刻度标签的字体大小为25
 
 # 设置Y轴为数值型，并设置最大值
 plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'{x:.0f}'))  # 显示数值
 plt.ylim(0, 14)  # 设置Y轴的最大值为300，您可以根据需要调整
 
-# 显示图形
 plt.tight_layout()
-
 # 保存图形为 PDF 文件
-plt.savefig(r'D:\BaiduNetdiskDownload\gld_transactions_per_request_v5.pdf', format='pdf')
+plt.savefig(r'D:\BaiduNetdiskDownload\gld_transactions_per_request_v6.pdf', format='pdf')
 
 plt.show()
 

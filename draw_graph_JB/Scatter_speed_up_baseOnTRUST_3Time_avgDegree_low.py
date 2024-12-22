@@ -132,14 +132,14 @@ ax1.axhline(y=1, color='red', linestyle='-', linewidth=4, label='baseline')
 # ax1.set_yscale('log')
 
 # 设置坐标轴标签
-ax1.set_xlabel('avg degree', fontsize=30, fontweight='bold')
-ax1.set_ylabel('Speedup', fontsize=30, fontweight='bold')
+ax1.set_xlabel('avg degree', fontsize=50, fontweight='bold')
+ax1.set_ylabel('Speedup', fontsize=50, fontweight='bold')
 
 # 设置 x 轴的刻度标签大小
-ax1.tick_params(axis='x', labelsize=25)
+ax1.tick_params(axis='x', labelsize=50)
 
 # 设置 y 轴的刻度标签大小
-ax1.tick_params(axis='y', labelsize=25)
+ax1.tick_params(axis='y', labelsize=50)
 
 # 设置边框线宽
 ax = plt.gca()
@@ -153,13 +153,13 @@ ax1.grid(False)
 
 # 添加图例
 # ax1.legend(fontsize=20)
-fig.legend(loc='upper left', bbox_to_anchor=(0.82, 0.95), ncol=1, fontsize=20, frameon=True, facecolor=(1, 1, 1, 0.6))
+fig.legend(loc='upper left', bbox_to_anchor=(0.6, 0.95), ncol=1, fontsize=50, frameon=True, facecolor=(1, 1, 1, 0.6))
 
 
 # 显示图形
 plt.tight_layout(pad=1.0, h_pad=2.0, w_pad=1.0)
 
-plt.savefig(r'D:\BaiduNetdiskDownload\Scatter_speed_up_baseOnTRUST_3Time_avgDegree_v2.pdf', format='pdf')
+plt.savefig(r'D:\BaiduNetdiskDownload\Scatter_speed_up_baseOnTRUST_3Time_avgDegree_v3.pdf', format='pdf')
 
 # 显示图像
 plt.show()

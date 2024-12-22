@@ -49,11 +49,16 @@ for i, patch in enumerate(box['boxes']):
 
 
 # 设置X轴标签和其它图形样式
-plt.xticks(range(1, len(selected_algorithms) + 1), selected_algorithms, rotation=20, fontsize=30)
-plt.ylabel('warp_execution_efficiency', fontsize=40, fontweight='bold')
-plt.tick_params(axis='x', labelsize=30)  # 设置纵坐标刻度标签的字体大小为25
+plt.xticks(range(1, len(selected_algorithms) + 1), selected_algorithms, rotation=25, fontsize=40)
+# plt.ylabel('warp_execution_efficiency', fontsize=37, fontweight='bold')
+
+ax = plt.gca()
+ax.set_ylabel('warp_execution_efficiency', fontsize=40, fontweight='bold')
+ax.yaxis.set_label_coords(-0.15, 0.4)  # 调整坐标，根据需要进行修改
+
+plt.tick_params(axis='x', labelsize=40)  # 设置纵坐标刻度标签的字体大小为25
 # 调整纵坐标刻度的字体大小
-plt.tick_params(axis='y', labelsize=30)  # 设置纵坐标刻度标签的字体大小为25
+plt.tick_params(axis='y', labelsize=40)  # 设置纵坐标刻度标签的字体大小为25
 
 # 如果数据范围在0到1之间，设置百分比格式
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1.0))
@@ -67,7 +72,7 @@ plt.gca().yaxis.set_major_formatter(PercentFormatter(1.0))
 plt.tight_layout()
 
 # 保存图形为 PDF 文件
-plt.savefig(r'D:\BaiduNetdiskDownload\warp_execution_efficiency_5.pdf', format='pdf')
+plt.savefig(r'D:\BaiduNetdiskDownload\warp_execution_efficiency_v6.pdf', format='pdf')
 
 plt.show()
 

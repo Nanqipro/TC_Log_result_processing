@@ -25,19 +25,19 @@ ax.plot(datasets, baseline, marker='*', markersize=15, linestyle='-', alpha=1, c
 
 # Set axis labels and title with bold font
 # ax.set_xlabel('Datasets', fontsize=14, fontweight='bold')
-ax.set_ylabel('Speedup', fontsize=30, fontweight='bold')
+ax.set_ylabel('Speedup', fontsize=55, fontweight='bold')
 # ax.set_title('Speed-up Ratios of Different Algorithms Relative to Polak Baseline', fontsize=16)
 
 # Set x-ticks
 ax.set_xticks(np.arange(len(datasets)))
-ax.set_xticklabels(datasets, rotation=20, ha='center', fontsize=25)
+ax.set_xticklabels(datasets, rotation=20, ha='center', fontsize=45)
 
 # Add legend with specified font size
-ax.legend(fontsize=20, loc='lower right', bbox_to_anchor=(0.98, 0.15), ncol=1)
+ax.legend(fontsize=40, loc='lower right', bbox_to_anchor=(0.98, 0.08), ncol=1)
 # fig.legend(loc='upper center', bbox_to_anchor=(0.35, 0.97), ncol=4, fontsize=20)
 # Set y-axis tick label size and tick width
-ax.tick_params(axis='x', labelsize=25, width=4)
-ax.tick_params(axis='y', labelsize=25, width=4)
+ax.tick_params(axis='x', labelsize=45, width=4)
+ax.tick_params(axis='y', labelsize=45, width=4)
 
 # Set y-axis label to bold
 # ax.yaxis.label.set_weight('bold')
@@ -52,7 +52,7 @@ ax.spines['left'].set_linewidth(2)
 plt.tight_layout()
 
 # 保存图形为 PDF 文件
-plt.savefig(r'D:\BaiduNetdiskDownload\G500_speed-up_change_S_v2.pdf', format='pdf')
+plt.savefig(r'D:\BaiduNetdiskDownload\G500_speed-up_change_S_v3.pdf', format='pdf')
 
 plt.show()
 
