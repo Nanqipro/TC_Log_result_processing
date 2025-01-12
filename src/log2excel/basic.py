@@ -296,7 +296,7 @@ def write_prof_metrics_to_excel(all_prof_metric_data, output_excel_path):
     ) as writer:  # 使用 ExcelWriter 以便导出多个 sheet
         for metric, df in all_prof_metric_data.items():
             df.to_excel(
-                writer, index=False, sheet_name=metric
+                writer, index=True, sheet_name=metric
             )  # 将 DataFrame 导出到指定的 sheet
 
 
@@ -325,6 +325,7 @@ def process_prof_logs_to_excel(
     datas = read_prof_logs(
         log_file_path_prefix, log_file_path_suffix, algorithms_info, metrics
     )
+
 
     # 处理为 key-value 对。 key 为 metric，value 为 DataFrame
     all_prof_metric_data = process_prof_metric_data(
