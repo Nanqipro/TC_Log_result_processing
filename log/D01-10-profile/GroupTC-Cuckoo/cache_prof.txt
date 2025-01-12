@@ -1,0 +1,4 @@
+==2028265== NVPROF is profiling process 2028265, command: /home/LiJB/cuda_project/TC-compare-V100/build/main -config=./config/config-grouptc-cuckoo.ini -dataset=Com-Friendster
+==2028265== Profiling application: /home/LiJB/cuda_project/TC-compare-V100/build/main -config=./config/config-grouptc-cuckoo.ini -dataset=Com-Friendster
+==2028265== Profiling result:
+No events/metrics were profiled.
