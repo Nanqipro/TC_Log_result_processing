@@ -3,25 +3,6 @@ import pandas as pd
 
 from basic import excel_base_path
 
-datasets = [
-    "s20-e2",
-    "s20-e4",
-    "s20-e8",
-    "s20-e16",
-    "s20-e32",
-    "s20-e64",
-    "s20-e128",
-    "s20-e256",
-    "s17-e32",
-    "s18-e32",
-    "s19-e32",
-    "s20-e32",
-    "s21-e32",
-    "s22-e32",
-    "s23-e32",
-    "s24-e32",
-]
-
 input_excel_path = excel_base_path + "grouptc_bs_ablation_time.xlsx"
 
 result = (
@@ -31,7 +12,7 @@ result = (
 
 df = pd.read_excel(input_excel_path)
 
-df = df[df["Datasets"].isin(datasets)]
+df = df[df["Datasets"].str.contains(r"s\d+-e\d+", regex=True)]
 
 df["EF_speedup"] = df["VP+EF_speedup"] / df["VP_speedup"]
 df["RL_speedup"] = df["VP+EF+RL_speedup"] / df["VP+EF_speedup"]

@@ -1,30 +1,8 @@
 # %%
 import pandas as pd
+import re
 
 from basic import excel_base_path
-
-datasets = [
-    "WN",
-    "CD",
-    "AM",
-    "RC",
-    "WT",
-    "IM",
-    "WB",
-    "AS",
-    "CP",
-    "SP",
-    "SX",
-    "CL",
-    "SL",
-    "K5",
-    "HW",
-    "CO",
-    "EN",
-    "K4",
-    "TW",
-    "CF",
-]
 
 input_excel_path = excel_base_path + "grouptc_bs_ablation_time.xlsx"
 
@@ -36,7 +14,7 @@ result = (
 
 df = pd.read_excel(input_excel_path)
 
-df = df[df["Datasets"].isin(datasets)]
+df = df[~df["Datasets"].str.contains(r"s\d+-e\d+", regex=True)]
 
 df["EF_speedup"] = df["VP+EF_speedup"] / df["VP_speedup"]
 df["RL_speedup"] = df["VP+EF+RL_speedup"] / df["VP+EF_speedup"]
