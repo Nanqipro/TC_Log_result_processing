@@ -12,7 +12,7 @@ df = pd.read_excel(file_path)
 # print(df.head())
 
 # 假设 Excel 中列名分别是 'edge-count'、'speed-up'、'speed-up_search' 和 'speed-up_build'
-x = df['avg_degree']
+x = df['small degree vertex avg degree']
 y = df['small degree vertex total time_speedup']
 y_search = df['small degree vertex hash search time_speedup']
 y_build = df['small degree vertex hash table construction time_speedup']
