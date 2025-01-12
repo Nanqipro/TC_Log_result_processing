@@ -21,7 +21,7 @@ y_build = df['small degree vertex hash table construction time_speedup']
 x_log = x
 
 # 创建图形和子图
-fig, ax1 = plt.subplots(figsize=(30, 10))
+fig, ax1 = plt.subplots(figsize=(25, 10))
 
 
 # 添加 speed-up_build 的散点图
@@ -70,7 +70,7 @@ ax1.grid(False)
 
 # 添加图例
 # ax1.legend(fontsize=20)
-fig.legend(loc='upper left', bbox_to_anchor=(0.6, 0.95), ncol=1, fontsize=50, frameon=True, facecolor=(1, 1, 1, 0.6))
+fig.legend(loc='upper left', bbox_to_anchor=(0.51, 0.95), ncol=1, fontsize=50, frameon=True, facecolor=(1, 1, 1, 0.6))
 
 
 # 显示图形

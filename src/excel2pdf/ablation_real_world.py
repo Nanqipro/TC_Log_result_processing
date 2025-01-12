@@ -50,7 +50,7 @@ ax1.tick_params(axis='y', labelsize=50)
 
 # Set x-ticks
 ax1.set_xticks(bar_positions)
-ax1.set_xticklabels(datasets, fontsize=45, rotation=20, ha='center')
+ax1.set_xticklabels(datasets, fontsize=45, rotation=0, ha='center')
 
 # 添加图例
 # fig.legend(loc='upper left', bbox_to_anchor=(0.07, 0.95), fontsize=20)
