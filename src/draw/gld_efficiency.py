@@ -1,12 +1,10 @@
 #%%
-
 import pandas as pd
 import matplotlib.pyplot as plt
-from matplotlib.ticker import PercentFormatter
 import seaborn as sns
 
 # 从 Excel 文件中加载数据
-df = pd.read_excel('../../excel/real_world_graph_profile.xlsx', sheet_name='warp_execution_efficiency')
+df = pd.read_excel('../../excel/real_world_graph_profile.xlsx', sheet_name='gld_efficiency')
 
 # 提取数据集名称（第一列）和算法名称（列头）
 datasets = df['Datasets']
@@ -24,7 +22,9 @@ selected_algorithms = [algo for algo in selected_algorithms if algo in algorithm
 boxplot_data = []
 for algorithm in selected_algorithms:
     # 尝试将数据转换为数值类型，无法转换的值将被设置为 NaN
-    cleaned_data = pd.to_numeric(df[algorithm], errors='coerce').dropna().values/100
+    numeric_data = pd.to_numeric(df[algorithm], errors='coerce')
+    # 过滤掉NaN值和大于100的值
+    cleaned_data = numeric_data[numeric_data <= 100].dropna().values
     boxplot_data.append(cleaned_data)
 
 # 自定义颜色，定义为一个列表，每个颜色对应一个算法
@@ -47,32 +47,27 @@ box = plt.boxplot(boxplot_data, patch_artist=True,
 for i, patch in enumerate(box['boxes']):
     patch.set_facecolor(colors[i])  # 设置每个箱体的颜色
 
+# 设置X轴标签和其它图形样式
 
 # 设置X轴标签和其它图形样式
 plt.xticks(range(1, len(selected_algorithms) + 1), selected_algorithms, rotation=25, fontsize=40)
-# plt.ylabel('warp_execution_efficiency', fontsize=37, fontweight='bold')
+# plt.ylabel('gld_transactions_per_request', fontsize=37, fontweight='bold')
 
 ax = plt.gca()
-ax.set_ylabel('warp_execution_efficiency', fontsize=40, fontweight='bold')
-ax.yaxis.set_label_coords(-0.15, 0.4)  # 调整坐标，根据需要进行修改
+ax.set_ylabel('gld_efficiency', fontsize=40, fontweight='bold')
+ax.yaxis.set_label_coords(-0.1, 0.4)  # 调整坐标，根据需要进行修改
+
 
 plt.tick_params(axis='x', labelsize=40)  # 设置纵坐标刻度标签的字体大小为25
-# 调整纵坐标刻度的字体大小
 plt.tick_params(axis='y', labelsize=40)  # 设置纵坐标刻度标签的字体大小为25
 
-# 如果数据范围在0到1之间，设置百分比格式
-plt.gca().yaxis.set_major_formatter(PercentFormatter(1.0))
+# 设置Y轴为数值型，并设置最大值
+plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'{x:.0f}'))  # 显示数值
+plt.ylim(0, 80)  # 设置Y轴的最大值为300，您可以根据需要调整
 
-# 可选：设置y轴的范围（根据数据情况调整）
-# plt.ylim(0, 1)  # 如果数据范围在0到1之间
-# 或
-# plt.ylim(0, 100)  # 如果数据范围在0到100之间
-
-# 显示图形
 plt.tight_layout()
-
 # 保存图形为 PDF 文件
-plt.savefig('../../pdf/warp_execution_efficiency_v7.pdf', format='pdf')
+plt.savefig('../../pdf/gld_efficiency_v1.pdf', format='pdf')
 
 plt.show()
 
