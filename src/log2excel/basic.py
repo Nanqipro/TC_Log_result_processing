@@ -169,7 +169,7 @@ def process_prof_metric_data(
         prof_metric_data = {}
         for algorithm_key, datasets in datas.items():
             for dataset, metric_values in datasets.items():
-                metric_value = metric_values.get(metric, {}).get(metric_type, 0)
+                metric_value = metric_values.get(metric, {}).get(metric_type, "")
                 algorithm_name = algorithms_info[algorithm_key]
                 if algorithm_name not in prof_metric_data:
                     prof_metric_data[algorithm_name] = {}
