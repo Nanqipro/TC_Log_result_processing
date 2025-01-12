@@ -8,7 +8,7 @@ from basic import datasets_characteristics
 # 读取日志文件
 log_file_path_prefix = log_base_path + "D01-10-all-time/"
 log_file_path_suffix = "/time_output.txt"
-output_excel_path = excel_base_path + "real_world_graph_time.xlsx"
+output_excel_path = excel_base_path + "real_world_graph_time_PTGG.xlsx"
 
 algorithms_info = {
     "Polak": "Polak",
