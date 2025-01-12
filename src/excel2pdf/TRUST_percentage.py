@@ -52,7 +52,7 @@ plt.tight_layout()
 plt.subplots_adjust(top=0.85)  # 根据图例位置调整 top 参数
 
 # 保存图形为 PDF 文件
-plt.savefig('../../pdf/TRUST_percentage_v5.pdf', format='pdf')
+plt.savefig('../../pdf/TRUST_percentage_v6.pdf', format='pdf')
 
 # 显示图形
 plt.show()

@@ -72,7 +72,7 @@ plt.gca().yaxis.set_major_formatter(PercentFormatter(1.0))
 plt.tight_layout()
 
 # 保存图形为 PDF 文件
-plt.savefig('../../pdf/warp_execution_efficiency_v7.pdf', format='pdf')
+plt.savefig('../../pdf/warp_execution_efficiency_v8.pdf', format='pdf')
 
 plt.show()
 

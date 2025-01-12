@@ -7,10 +7,10 @@ file_path = '../../excel/grouptc_bs_ablation_time.xlsx'
 df = pd.read_excel(file_path)
 
 # Extract data for plotting
-datasets = df['Datasets'][20:37]
-o1 = df['VP_speedup'][20:37]
-o1o2 = df['VP+EF_speedup'][20:37]
-o1o2o3 = df['VP+EF+RL_speedup'][20:37]
+datasets = df['Datasets'][:20]
+o1 = df['VP_speedup'][:20]
+o1o2 = df['VP+EF_speedup'][:20]
+o1o2o3 = df['VP+EF+RL_speedup'][:20]
 # avg_degree = df['avg_degree'] if 'avg_degree' in df.columns else None  # Optional avg_degree column
 
 # Set up the figure and axes

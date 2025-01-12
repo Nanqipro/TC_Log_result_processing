@@ -67,7 +67,7 @@ plt.ylim(0, 80)  # 设置Y轴的最大值为300，您可以根据需要调整
 
 plt.tight_layout()
 # 保存图形为 PDF 文件
-plt.savefig('../../pdf/gld_efficiency_v1.pdf', format='pdf')
+plt.savefig('../../pdf/gld_efficiency_v3.pdf', format='pdf')
 
 plt.show()
 
