@@ -125,7 +125,7 @@ ax1.bar(bar_positions[7], 0, bar_width, label='TRUST', color='#bce2ea', edgecolo
 
 # 添加图例
 # fig.legend(loc='upper left', bbox_to_anchor=(0.07, 0.95), fontsize=20)
-fig.legend(loc='upper center', bbox_to_anchor=(0.4, 0.95), ncol=10, fontsize=20)
+fig.legend(loc='upper center', bbox_to_anchor=(0.41, 0.95), ncol=10, fontsize=20)
 
 # 设置边框线宽
 ax = plt.gca()
@@ -138,7 +138,7 @@ ax.spines['left'].set_linewidth(2)
 plt.tight_layout(pad=1.0, h_pad=2.0, w_pad=1.0)
 
 # 保存图形为 PDF 文件
-plt.savefig(r'../../pdf/real_world_graph_time.pdf', format='pdf')
+plt.savefig(r'../../pdf/time_output_v5.pdf', format='pdf')
 
 plt.show()
 
