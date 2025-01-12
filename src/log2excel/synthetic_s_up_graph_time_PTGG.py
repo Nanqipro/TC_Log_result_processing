@@ -1,5 +1,5 @@
 # %%
-from basic import read_time_logs_to_df
+from basic import read_time_logs_to_df, synthetic_datasets_characteristics
 from basic import log_base_path, excel_base_path
 
 # 读取日志文件
@@ -14,16 +14,11 @@ algorithms_info = {
     "GroupTC-HASH-V2": "GroupTC-HS",
 }
 
-datasets_info = {
-    "cluster4-s17-e32": "s17-e32",
-    "cluster4-s18-e32": "s18-e32",
-    "cluster4-s19-e32": "s19-e32",
-    "cluster4-s20-e32": "s20-e32",
-    "cluster4-s21-e32": "s21-e32",
-    "cluster4-s22-e32": "s22-e32",
-    "cluster4-s23-e32": "s23-e32",
-    "cluster4-s24-e32": "s24-e32",
-}
+datasets_characteristics_df = synthetic_datasets_characteristics()
+datasets_characteristics_df = datasets_characteristics_df[
+    datasets_characteristics_df["Datasets"].str.contains(r"cluster4", regex=True)
+]
+datasets_info = datasets_characteristics_df.set_index("Datasets")["ABBR."].to_dict()
 
 data = read_time_logs_to_df(
     log_file_path_prefix,

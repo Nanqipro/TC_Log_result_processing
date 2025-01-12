@@ -7,121 +7,19 @@ excel_base_path = "../../excel/"
 pdf_base_path = "../../pdf/"
 
 
-def datasets_characteristics():
-    data = {
-        "Datasets": [
-            "Web-NotreDame",
-            "Com-Dblp",
-            "Amazon0601",
-            "RoadNet-CA",
-            "Wiki-Talk",
-            "Imdb-2021",
-            "Web-BerkStan",
-            "As-Skitter",
-            "Cit-Patents",
-            "Soc-Pokec",
-            "Sx-Stackoverflow",
-            "Com-Lj",
-            "Soc-LiveJ",
-            "k-mer-graph5",
-            "Hollywood-2011",
-            "Com-Orkut",
-            "Enwiki-2024",
-            "k-mer-graph4",
-            "Twitter7",
-            "Com-Friendster",
-        ],
-        "ABBR": [
-            "WN",
-            "CD",
-            "AM",
-            "RC",
-            "WT",
-            "IM",
-            "WB",
-            "AS",
-            "CP",
-            "SP",
-            "SX",
-            "CL",
-            "SL",
-            "K5",
-            "HW",
-            "CO",
-            "EN",
-            "K4",
-            "TW",
-            "CF",
-        ],
-        "vertex_count": [
-            325729,
-            317080,
-            403394,
-            1965206,
-            2394385,
-            1224346,
-            685230,
-            1696415,
-            3774768,
-            1632803,
-            2601977,
-            3997962,
-            4847571,
-            55042369,
-            1985306,
-            3072441,
-            6783976,
-            214005017,
-            41652230,
-            65608366,
-        ],
-        "edge_count": [
-            1090108,
-            1049866,
-            2443408,
-            2766607,
-            4659565,
-            5369472,
-            6649470,
-            11095298,
-            16518947,
-            22301964,
-            28183518,
-            34681189,
-            42851237,
-            58608800,
-            114492816,
-            117185083,
-            157010940,
-            232705452,
-            1202513046,
-            1806067135,
-        ],
-        "avg_degree": [
-            6.69,
-            6.62,
-            12.11,
-            2.82,
-            3.89,
-            8.77,
-            19.41,
-            13.08,
-            8.75,
-            27.32,
-            21.66,
-            17.35,
-            17.68,
-            2.13,
-            115.34,
-            76.28,
-            46.29,
-            2.17,
-            57.74,
-            55.06,
-        ],
-    }
-    return pd.DataFrame(data)
+def all_datasets_characteristics():
+    df = pd.read_excel(excel_base_path + "all_datasets.xlsx")
+    return df
 
+def real_world_datasets_characteristics():
+    df = all_datasets_characteristics()
+    df = df[~df["Datasets"].str.contains(r"s\d+-e\d+", regex=True)]
+    return df
+
+def synthetic_datasets_characteristics():
+    df = all_datasets_characteristics()
+    df = df[df["Datasets"].str.contains(r"s\d+-e\d+", regex=True)]
+    return df
 
 def read_time_log(log_file_path, algorithm_key, algorithm_names, datasets_info):
     """
