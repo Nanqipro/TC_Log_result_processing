@@ -64,7 +64,7 @@ data["baseline"] = [1] * len(data["Datasets"])
 
 for time_type in time_types:
     if time_type != "no optimization":
-        data[f"{time_type}_speedup"] = data["baseline"] / data[time_type]
+        data[f"{time_type}_speedup"] = data["no optimization"] / data[time_type]
 
 
 print(data.to_string(index=True))
