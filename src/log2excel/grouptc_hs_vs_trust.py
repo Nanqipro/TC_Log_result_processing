@@ -96,7 +96,7 @@ for time_type in time_types:
 
 print(data.to_string(index=True))
 
-data.to_excel(output_excel_path, index=True)
+data.to_excel(output_excel_path, index=False)
 
 
 # %%

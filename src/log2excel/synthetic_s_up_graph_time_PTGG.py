@@ -37,6 +37,6 @@ for algorithm in algorithms_info.values():
 
 print(data.to_string(index=True))
 
-data.to_excel(output_excel_path, index=True)
+data.to_excel(output_excel_path, index=False)
 
 # %%

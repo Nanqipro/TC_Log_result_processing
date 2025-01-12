@@ -2,7 +2,7 @@
 import pandas as pd
 import re
 
-from basic import read_multiple_part_time_logs_to_df    
+from basic import read_multiple_part_time_logs_to_df
 from basic import log_base_path, excel_base_path
 
 
@@ -43,7 +43,12 @@ data = read_multiple_part_time_logs_to_df(
     ["small degree vertex", "large degree vertex", "all vertex"],
 )
 
+data["all vertex"] = data["small degree vertex"] + data["large degree vertex"]
+data["low degree part"] = data["small degree vertex"] / data["all vertex"]
+data["high degree part"] = data["large degree vertex"] / data["all vertex"]
+
+
 print(data.to_string(index=True))
-data.to_excel(output_excel_path, index=True)
+data.to_excel(output_excel_path, index=False)
 
 # %%
