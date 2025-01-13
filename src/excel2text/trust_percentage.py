@@ -10,6 +10,6 @@ df = pd.read_excel(input_excel_path)
 df["low degree part"] = df["small degree vertex"] / df["all vertex"]
 trust_percentage = df["low degree part"].mean()
 
-print(round(trust_percentage, 2))
+print(round(trust_percentage, 4))
 
 # %%

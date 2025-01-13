@@ -42,6 +42,11 @@ ax1.scatter(x_log, y, marker='*', color='#4A5F7E', alpha=1, s=200, linewidths=9,
 # 添加基准线 y=1
 ax1.axhline(y=1, color='red', linestyle='-', linewidth=4, label='baseline')
 
+# 设置 x 轴和 y 轴的最大最小值
+# ax1.set_xlim(left=0, right=80)  # 根据数据范围设置 x 轴的最小值和最大值
+# ax1.set_ylim(bottom=0, top=18)   # 根据数据范围设置 y 轴的最小值和最大值
+
+
 # 设置 X 轴为对数坐标
 # ax1.set_xscale('log')
 
@@ -76,7 +81,7 @@ fig.legend(loc='upper left', bbox_to_anchor=(0.51, 0.95), ncol=1, fontsize=50, f
 # 显示图形
 plt.tight_layout(pad=1.0, h_pad=2.0, w_pad=1.0)
 
-plt.savefig('../../pdf/grouptc_hs_vs_trust_v1.pdf', format='pdf')
+plt.savefig('../../pdf/grouptc_hs_vs_trust_small_degree_vertex_v1.pdf', format='pdf')
 
 # 显示图像
 plt.show()

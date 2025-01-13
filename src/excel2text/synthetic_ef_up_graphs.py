@@ -9,8 +9,6 @@ result = (
     "GroupTC-BS achieves the highest speedup in graphs with lower average degrees, "
     "with speedups ranging from {speedup_bs_polak_min}× to {speedup_bs_polak_max}× compared to Polak, and from {speedup_bs_trust_min}× to {speedup_bs_trust_max}× compared to TRUST. "
     "GroupTC-HS achieves a speedup ranging from {speedup_hs_polak_min}× to {speedup_hs_polak_max}× compared to Polak, and from {speedup_hs_trust_min}× to {speedup_hs_trust_max}× compared to TRUST. "
-    "Additionally, GroupTC-HS performs better in graphs with large average degrees. "
-    "As the average degree increases, the performance of GroupTC-HS ultimately surpasses that of GroupTC-BS, since the hash search outperforms the binary search when handling large neighbor lists. "
 )
 
 df = pd.read_excel(input_excel_path)

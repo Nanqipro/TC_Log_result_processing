@@ -177,6 +177,7 @@ def process_prof_metric_data(
 
         # 将数据转换为 DataFrame
         df = pd.DataFrame(prof_metric_data)
+        df.index.name = 'Datasets'
         all_prof_metric_data[metric] = df
     return all_prof_metric_data
 

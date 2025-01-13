@@ -11,7 +11,7 @@ algorithms_info = {
     "Polak": "Polak",
     "TRUST": "TRUST",
     "GroupTC-OPT": "GroupTC-BS",
-    "GroupTC-HASH-V2": "GroupTC-HS",
+    "GroupTC-Cuckoo": "GroupTC-HS",
 }
 
 datasets_characteristics_df = synthetic_datasets_characteristics()
