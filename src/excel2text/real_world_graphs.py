@@ -5,7 +5,6 @@ from basic import excel_base_path
 
 input_excel_path = excel_base_path + "real_world_graph_time_PTGG.xlsx"
 
-total_datasets = 20
 
 result = (
     "GroupTC-BS and GroupTC-HS perform well across all graphs. "
@@ -19,7 +18,7 @@ result = (
 )
 
 df = pd.read_excel(input_excel_path)
-
+total_datasets = df.shape[0]
 
 df["speedup_bs_polak"] = df["Polak"] / df["GroupTC-BS"]
 df["speedup_hs_polak"] = df["Polak"] / df["GroupTC-HS"]

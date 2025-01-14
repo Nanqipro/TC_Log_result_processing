@@ -5,9 +5,9 @@ from basic import excel_base_path
 
 input_excel_path = excel_base_path + "synthetic_ef_up_graph_time_PTGG.xlsx"
 
+
 result = (
-    "GroupTC-BS achieves the highest speedup in graphs with lower average degrees, "
-    "with speedups ranging from {speedup_bs_polak_min}× to {speedup_bs_polak_max}× compared to Polak, and from {speedup_bs_trust_min}× to {speedup_bs_trust_max}× compared to TRUST. "
+    "GroupTC-BS achieves speedups of {speedup_bs_polak_min}× to {speedup_bs_polak_max}× compared to Polak, and {speedup_bs_trust_min}× to {speedup_bs_trust_max}× compared to TRUST. "
     "GroupTC-HS achieves a speedup ranging from {speedup_hs_polak_min}× to {speedup_hs_polak_max}× compared to Polak, and from {speedup_hs_trust_min}× to {speedup_hs_trust_max}× compared to TRUST. "
 )
 
@@ -55,4 +55,3 @@ print(
 )
 
 # %%
-

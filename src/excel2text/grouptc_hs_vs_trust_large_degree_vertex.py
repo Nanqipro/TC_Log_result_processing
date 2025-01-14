@@ -14,6 +14,7 @@ result = (
 )
 
 df = pd.read_excel(input_excel_path)
+df = df[df["large degree vertex avg degree"].notna()]
 
 speedup_total_avg = df["large degree vertex total time_speedup"].mean()
 speedup_total_max = df["large degree vertex total time_speedup"].max()
