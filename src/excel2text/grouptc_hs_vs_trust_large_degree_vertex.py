@@ -8,10 +8,11 @@ input_excel_path = excel_base_path + "grouptc_hs_vs_trust_time.xlsx"
 result = (
     "For the total time, GroupTC-HS achieves an average speedup of {speedup_total_avg}×, with a maximum speedup of {speedup_total_max}×. "
     "In hash table construction, GroupTC-HS performs worse than TRUST, achieving an average speed ratio of {speedup_hash_table_construction_avg}×, "
-    "due to higher conflict rates when inserting keys into the hash table. "
+    "since cuckoo hashing results in a higher number of conflicts when inserting keys into the hash table compared to bucket hashing. "
     "However, in hash search time, GroupTC-HS achieves an average speedup of {speedup_hash_search_avg}×, with a maximum speedup of {speedup_hash_search_max}×, "
-    "benefiting from its constant time complexity for searches."
+    "benefiting from the constant time complexity of cuckoo hashing for searches."
 )
+
 
 df = pd.read_excel(input_excel_path)
 df = df[df["large degree vertex avg degree"].notna()]
